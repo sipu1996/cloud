@@ -14,7 +14,7 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files (x86)\\Tesseract-OCR
 
 def post_process_tree(source_root, log_dir)
     """Post process image files"""
-    # pylint: disable=unused-variable
+    
     for parent_dir, subdirs, file_names in os.walk(source_root):
         for file_name in file_names:
             full_path = os.path.join(parent_dir, file_name)
