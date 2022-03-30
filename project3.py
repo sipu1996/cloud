@@ -6,7 +6,7 @@ import numpy as np
 import cv2
 import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract.exe'
-def post_process_tree (source_root) :
+def post_processtree(source_root, log_dir):
     """Post process image files"""
     for parent_dir, subdirs, file_names in os.walk(source_root):
         for file_name in file_names:
