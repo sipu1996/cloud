@@ -8,11 +8,11 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract.exe'
 def post_processtree(source_root, log_dir)
     """Post process image files"""
-    for parent_dir, subdirs, file_names in os.walk(source_root):
-        for file_name in file_names:
+    for parent_dir, subdirs, file_names in os.walk(source_root)
+        for file_name in file_names
             full_path = os.path.join(parent_dir, file_name)
             rel_path = os.path.relpath(full_path, source_root)
-            if re.search("\\.(png|jpeg|jpg)$", rel_path):
+            if re.search("\\.(png|jpeg|jpg)$", rel_path)
                 image = cv2.imread(full_path)
                 image_text = ocr_core(image)
                 result = check(file_name, image_text)
