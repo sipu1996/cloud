@@ -1,38 +1,4 @@
 
-import argparse
-import os
-import re
-import sys
-import numpy as np
-import cv2
-import pytesseract
-
-
-pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract.exe'
-
-
-
-def post_process_tree(source_root, log_dir)
-    """Post process image files"""
-    
-    for parent_dir, file_names in os.walk(source_root):
-        for file_name in file_names:
-            full_path = os.path.join(parent_dir, file_name)
-            rel_path = os.path.relpath(full_path, source_root)
-            if re.search("\\.(png|jpeg|jpg)$", rel_path):
-                image = cv2.imread(full_path)
-                image_text = ocr_core(image)
-                result = check(file_name, image_text)
-                create_log(log_dir, result)
-    print(rf"Log file with details: {os.path.abspath(log_dir)}\log.txt")
-
-
-
-def get_grayscale(image):
-    """Get image from the BGR color space to gray"""
-    return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-
 
 def sharpen(image):
     """Creating sharpening filter"""
